@@ -29,7 +29,7 @@ void heap_push(Heap* pq, void* data, int priority){
         int nueva_capacidad = pq->capac * 2 + 1;
         pq->heapArray = realloc(pq->heapArray, nueva_capacidad * sizeof(heapElem));
         if (pq->heapArray == NULL)exit(EXIT_FAILURE);
-        pq->capac = nueva_capacidad
+        pq->capac = nueva_capacidad;
     }
 
 }
