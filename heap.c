@@ -33,6 +33,17 @@ void heap_pop(Heap* pq){
 }
 
 Heap* createHeap(){
+    Heap* heap = (Heap*)malloc(sizeof(Heap));
+    if (heap == NULL)exit(EXIT_FAILURE);
+    
+    // Inicializar variables del Heap
+    heap->size = 0;
+    heap->capac = 3;  
+    heap->heapArray = (heapElem*)malloc(heap->capac * sizeof(heapElem));
+    if (heap->heapArray == NULL) {
+        free(heap);  // Liberar memoria asignada previamente
+        exit(EXIT_FAILURE);
+    }
 
-   return NULL;
+    return heap;
 }
