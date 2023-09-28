@@ -34,3 +34,16 @@ Thu 28 Sep 2023 06:49:32 AM UTC:
  tests:  2|2
 total_score: 20/70
 05d16fd
+Thu 28 Sep 2023 06:49:46 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:32:36: error: expected ‘;’ before ‘}’ token
+   32 |         pq->capac = nueva_capacidad
+      |                                    ^
+      |                                    ;
+   33 |     }
+      |     ~                               
+Compilation failed
+9666de6
