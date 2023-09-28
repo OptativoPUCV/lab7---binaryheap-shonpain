@@ -26,11 +26,33 @@ void* heap_top(Heap* pq){
 void heap_push(Heap* pq, void* data, int priority){
     if (pq->size >= pq->capac) {
         // Aumentar la capacidad al doble + 1
-        int nueva_capacidad = pq->capac * 2 + 1;
-        pq->heapArray = realloc(pq->heapArray, nueva_capacidad * sizeof(heapElem));
+        int nuevaCapacidad = pq->capac * 2 + 1;
+        
+        pq->heapArray = realloc(pq->heapArray, nuevaCapacidad * sizeof(heapElem));
         if (pq->heapArray == NULL)exit(EXIT_FAILURE);
-        pq->capac = nueva_capacidad;
+        pq->capac = nuevaCapacidad;
     }
+
+    pq->heapArray[pq->size].data = data;
+    pq->heapArray[pq->size].priority = priority;
+    pq->size++;
+
+    int aux = pq->size - 1;
+    while(aux > 0){
+        int parentAux = ((aux -1 )/ 2);
+        if( pq->heapArray[aux].priority >  pq->heapArray[parentAux].priority){
+            heapElem temp =  pq->heapArray[aux];
+            pq->heapArray[aux] =  pq->heapArray[parentAux];
+            pq->heapArray[parentAux] = temp;
+            aux = parentAux;
+        }else{
+            break;
+        }
+    }
+
+
+    
+    
 
 }
 
