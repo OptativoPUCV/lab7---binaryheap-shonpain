@@ -70,3 +70,9 @@ heap.c:80:5: error: implicit declaration of function ‘swap’ [-Werror=implici
 cc1: all warnings being treated as errors
 Compilation failed
 306124a
+Wed 11 Oct 2023 01:35:01 AM UTC: 
+ heap.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+ tests:  8|0
+total_score: 70/70
+424fc06

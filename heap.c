@@ -49,11 +49,12 @@ void heap_push(Heap* pq, void* data, int priority){
             break;
         }
     }
+}
 
-
-    
-    
-
+void swap(heapElem* x, heapElem* y){
+  heapElem aux=*x;
+  *x=*y;
+  *y=aux;
 }
 
 
